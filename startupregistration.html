@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Startup Registration Form</title>
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <!-- font awesome cdn link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <!-- css link -->
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+        } */
+        .container {
+            margin : 60px auto;
+            max-width: 600px;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            font-size: 30px;
+            text-align: center;
+            color:#a72841;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+        label {
+            margin-top: 10px;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        input, select, textarea {
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        input[type="submit"] {
+            margin-top: 20px;
+            background-color: #a72844;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #218838;
+        }
+        @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600&display=swap");
+
+:root{
+   --main-color:#f45866;
+   --primary-color: #404068;
+   --white:#fff;
+   --bg: #f7f0ed;
+   --light-black:#333;
+   --box-shadow: 0 .5rem 1rem rgba(0,0,0,.1);
+}
+
+*{
+   font-family: 'Poppins', sans-serif;
+   margin:0; padding:0;
+   box-sizing: border-box;
+   outline: none; border:none;
+   text-decoration: none;
+   transition: .2s linear;
+   text-transform: capitalize;
+}
+
+html{
+   font-size: 62.5%;
+   overflow-x: hidden;
+   scroll-behavior: smooth;
+   scroll-padding-top: 6rem;
+}
+
+html::-webkit-scrollbar{
+   width: .8rem;
+}
+
+html::-webkit-scrollbar-track{
+   background-color: var(--white);
+}
+
+html::-webkit-scrollbar-thumb{
+   background-color: var(--primary-color);
+   border-radius: 5rem;
+}
+
+body{
+   background: var(--bg); 
+}
+
+body.active{
+  --primary-color:#fff;
+  --light-black:#eee;
+  --white:#333;
+  --bg:#222;
+  --box-shadow:0 .5rem 1.5rem rgba(0,0,0,.4);
+}
+
+section{
+   padding: 3rem 9%;
+}
+
+.heading{
+   text-align: center;
+   color:var(--primary-color);
+   text-transform: uppercase;
+   margin-bottom: 4rem;
+   font-size: 4rem;
+   margin-top: 2rem;
+}
+
+.btn {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: .8rem 2.8rem;
+    border-radius: 5rem;
+    border-top-left-radius: 0;
+    border: 0.2rem solid var(--main-color);
+    cursor: pointer;
+    color: var(--main-color);
+    font-size: 1.7rem;
+    overflow: hidden;
+    z-index: 0;
+    position: relative;
+  }
+  
+  .btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: var(--main-color);
+    z-index: -1;
+    -webkit-transition: .2s linear;
+    transition: .2s linear;
+    clip-path: circle(0% at 0% 5%);
+  }
+  
+  .btn:hover::before {
+     clip-path: circle(100%);
+  }
+  
+  .btn:hover {
+    color: var(--white);
+  }
+
+/* header */
+
+.header{
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2rem 9%;
+  background: var(--white);
+  box-shadow: var(--box-shadow);
+}
+
+.header .logo{
+   font-size: 2.2rem;
+   font-weight: bolder;
+   color:var(--primary-color);
+}
+
+.header .logo i{
+   color:var(--main-color);
+   padding-right: .5rem;
+}
+
+.header .navbar a{
+   font-size: 1.7rem;
+   margin-left: 2rem;
+   color:var(--primary-color);
+  padding-block: 1.6rem;
+  position: relative; 
+}
+
+.header .navbar a:hover{
+   color: var(--main-color);
+}
+
+.header .navbar a::before {
+   content: "";
+   position: absolute;
+   height: .3rem;
+   border-block: 1px solid var(--main-color);
+   bottom: .5rem;
+   width: 100%;
+   transform: scaleX(0);
+   transform-origin: center;
+   transition: 0.5s ease;
+ }
+
+ .header .navbar a:is(:hover, :focus)::before { 
+   transform: scaleX(1); 
+ }
+
+.header .icons div{
+   height:4.5rem;
+   width:4.5rem;
+   line-height:4.5rem;
+   font-size: 2rem;
+   border-radius: .5rem;
+   margin-left: .5rem;
+   cursor: pointer;
+   color:var(--primary-color);
+   background: var(--main-color);
+   text-align: center;
+}
+.header .icons div:hover{
+   color: var(--main-color);
+   background: var(--primary-color);
+}
+
+#menu{
+   display: none;
+}
+
+
+    </style>
+</head>
+<body>
+    <header class="header">
+
+        <a data-aos="zoom-in-left" data-aos-delay="150" href="index.html" class="logo"> <i class="fas fa-user"></i> Startiqo </a>
+    
+        <nav class="navbar">
+           <a data-aos="zoom-in-left" data-aos-delay="290" href="index.html#home">home</a>
+           <a data-aos="zoom-in-left" data-aos-delay="430" href="index.html#about">about</a>
+           <a data-aos="zoom-in-left" data-aos-delay="585" href="index.html#whyus">Why Us</a>
+           <a data-aos="zoom-in-left" data-aos-delay="710" href="resources.html">Resources</a>
+           <a data-aos="zoom-in-left" data-aos-delay="880" href="index.html#gallery">Clients</a>
+           <a data-aos="zoom-in-left" data-aos-delay="1010" href="index.html#steps">Steps</a>
+           <a data-aos="zoom-in-left" data-aos-delay="1160" href="index.html#contact">contact</a>
+        </nav>
+        
+        <div class="icons">
+            <div data-aos="zoom-in-left" data-aos-delay="1320" class="fas fa-moon aos-init aos-animate" id="theme-btn"></div>
+            <div data-aos="zoom-in-left" data-aos-delay="1470" class="fas fa-bars aos-init aos-animate" id="menu"></div>
+        </div>
+    
+    </header>
+
+<!-- form     -->
+
+<div class="container">
+    <h1>Startup Registration Form</h1>
+    <form action="document.php" method="POST">
+        <!-- Company Details -->
+        <label for="company-name">Company Name:</label>
+        <input type="text" id="companyname" name="companyname" required>
+
+        <label for="business-type">Business Type:(if you know)</label>
+        <select id="businesstype" name="businesstype">
+            <option value="sole_proprietorship">Sole Proprietorship</option>
+            <option value="partnership">Partnership</option>
+            <option value="corporation">Corporation</option>
+            <option value="llc">LLC</option>
+            <option value="other">Other</option>
+        </select>
+
+        <label for="industry">Industry:</label>
+        <input type="text" id="industry" name="industry" required>
+
+        <label for="incorporation-date">Date of Incorporation:</label>
+        <input type="text" id="incorporationdate" name="incorporationdate" required>
+
+        <label for="website">Company Website (if applicable):</label>
+        <input type="text" id="companywebsite" name="companywebsite">
+
+        <!-- Founder/Owner Details -->
+        <label for="full-name">Full Name:</label>
+        <input type="text" id="fullname" name="fullname" required>
+
+        <label for="email">Email Address:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="phone">Phone Number:</label>
+        <input type="number" id="phone" name="phone" required>
+
+        <label for="address">Address:</label>
+        <textarea id="address" name="address" rows="3" required></textarea>
+
+        <label for="role">Position/Role in Company:</label>
+        <input type="text" id="role" name="role" required>
+
+        <!-- Business Details -->
+        <label for="business-address">Business Address:</label>
+        <textarea id="businessaddress" name="businessaddress" rows="3" required></textarea>
+
+        <label for="business-phone">Business Phone Number:</label>
+        <input type="tel" id="businessphone" name="businessphone" required>
+
+        <!-- Additional Information -->
+        <label for="description">Business Description:</label>
+        <textarea id="description" name="description" rows="4" required></textarea>
+
+        <label for="employees">Number of Employees (if applicable):</label>
+        <input type="number" id="employees" name="employees">
+
+        <label for="funding">Funding/Investment Details (if applicable):</label>
+        <textarea id="funding" name="funding" rows="3"></textarea>
+
+        <!-- Legal Information -->
+        <label for="tin">Tax Identification Number (TIN):</label>
+        <input type="text" id="tin" name="tin" required>
+
+        <label for="license">Business License Number (if applicable):</label>
+        <input type="text" id="license" name="license">
+
+        <!-- Submit Button -->
+        <input type="submit" value="Register">
+    </form>
+</div>
+
+<!-- footer -->
+
+<section class="footer">
+
+    <div class="box-container">
+
+      <div class="box">
+        <h3> <i class="fas fa-user"></i> Our Team </h3>
+        <p>Behind Startiqo is a dedicated team of industry veterans, tech enthusiasts, and startup aficionados, all united by a common goal: to simplify the path to entrepreneurship.</p><br><p>Join us on this journey and let Startiqo be your trusted partner in turning your startup dreams into reality.</p>
+      </div>
+
+      <div class="box">
+        <h3>Quick Links</h3>
+          <a href="#"><i class="fas fa-chevron-right"></i> --- </a>
+          <a href="#"><i class="fas fa-chevron-right"></i> --- </a>
+          <a href="#"><i class="fas fa-chevron-right"></i> --- </a>
+          <a href="#"><i class="fas fa-chevron-right"></i> --- </a>
+      </div>
+
+      <div class="box">
+        <h3>Contact Us</h3>
+        <a href="#"><i class="fas fa-phone"></i> XXX-XXX-X555</a>
+        <a href="#"><i class="fas fa-phone"></i> XXX-XXX-X565</a>
+        <a href="#"><i class="fas fa-envelope"></i> work@bugriders.com</a>
+        <a href="#"><i class="fas fa-map"></i> Lovely Professional University, Punjab</a>
+      </div>
+
+      <div class="box">
+        <h3>Follow Us</h3>
+        <a href="#"> <i class="fab fa-facebook-f"></i> facebook </a>
+        <a href="#"> <i class="fab fa-twitter"></i> twitter </a>
+        <a href="#"> <i class="fab fa-instagram"></i> instagram </a>
+        <a href="#"> <i class="fab fa-pinterest"></i> pinterest </a>
+      </div>
+    </div>
+
+    <div class="credit"> &copy; copyright @ 2024 by <span>Bug Riders</span> </div>
+
+  </footer>
+  </section>
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

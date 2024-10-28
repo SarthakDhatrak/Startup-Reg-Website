@@ -1,0 +1,805 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resources</title>
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <!-- font awesome cdn link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <!-- css link -->
+    <link rel="stylesheet" href="style.css">
+ 
+    <style>
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600&display=swap");
+
+:root{
+   --main-color:#f45866;
+   --primary-color: #404068;
+   --white:#fff;
+   --bg: #f7f0ed;
+   --light-black:#333;
+   --box-shadow: 0 .5rem 1rem rgba(0,0,0,.1);
+}
+
+*{
+   font-family: 'Poppins', sans-serif;
+   margin:0; padding:0;
+   box-sizing: border-box;
+   outline: none; border:none;
+   text-decoration: none;
+   transition: .2s linear;
+   text-transform: capitalize;
+}
+
+html{
+   font-size: 62.5%;
+   overflow-x: hidden;
+   scroll-behavior: smooth;
+   scroll-padding-top: 6rem;
+}
+
+html::-webkit-scrollbar{
+   width: .8rem;
+}
+
+html::-webkit-scrollbar-track{
+   background-color: var(--white);
+}
+
+html::-webkit-scrollbar-thumb{
+   background-color: var(--primary-color);
+   border-radius: 5rem;
+}
+
+body{
+   background: var(--bg); 
+}
+
+body.active{
+  --primary-color:#fff;
+  --light-black:#eee;
+  --white:#333;
+  --bg:#222;
+  --box-shadow:0 .5rem 1.5rem rgba(0,0,0,.4);
+}
+
+section{
+   padding: 3rem 9%;
+}
+
+.heading{
+   text-align: center;
+   color:var(--primary-color);
+   text-transform: uppercase;
+   margin-bottom: 4rem;
+   font-size: 4rem;
+   margin-top: 10rem;
+}
+
+
+
+/* header */
+
+.header{
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2rem 9%;
+  background: var(--white);
+  box-shadow: var(--box-shadow);
+}
+
+.header .logo{
+   font-size: 2.2rem;
+   font-weight: bolder;
+   color:var(--primary-color);
+}
+
+.header .logo i{
+   color:var(--main-color);
+   padding-right: .5rem;
+}
+
+.header .navbar a{
+   font-size: 1.7rem;
+   margin-left: 2rem;
+   color:var(--primary-color);
+  padding-block: 1.6rem;
+  position: relative; 
+}
+
+.header .navbar a:hover{
+   color: var(--main-color);
+}
+
+.header .navbar a::before {
+   content: "";
+   position: absolute;
+   height: .3rem;
+   border-block: 1px solid var(--main-color);
+   bottom: .5rem;
+   width: 100%;
+   transform: scaleX(0);
+   transform-origin: center;
+   transition: 0.5s ease;
+ }
+
+ .header .navbar a:is(:hover, :focus)::before { 
+   transform: scaleX(1); 
+ }
+
+.header .icons div{
+   height:4.5rem;
+   width:4.5rem;
+   line-height:4.5rem;
+   font-size: 2rem;
+   border-radius: .5rem;
+   margin-left: .5rem;
+   cursor: pointer;
+   color:var(--primary-color);
+   background: var(--main-color);
+   text-align: center;
+}
+.header .icons div:hover{
+   color: var(--main-color);
+   background: var(--primary-color);
+}
+
+#menu{
+   display: none;
+}
+
+
+
+/* footer */
+
+.footer{
+   background: var(--white);
+ }
+
+ .footer .box-container {
+   display: grid;
+   grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+   gap: 1.5rem;
+ }
+
+ .footer .box-container .box {
+  padding: 1rem 0;
+}
+
+ .footer .box-container .box h3 {
+   font-size: 2.2rem;
+   color: var(--primary-color);
+   padding: 1rem 0;
+ }
+ 
+ .footer .box-container .box p {
+   font-size: 1.5rem;
+   color: var(--main-color);
+   padding: 1rem 0;
+   line-height: 2;
+ }
+ 
+ .footer .box-container .box a {
+   display: block;
+   font-size: 1.4rem;
+   color: var(--main-color);
+   padding: 1rem 0;
+ }
+ 
+ .footer .box-container .box a i {
+   padding-right: .5rem;
+   color: var(--primary-color);
+ }
+ 
+ .footer .box-container .box a:hover {
+   color: var(--primary-color);
+ }
+ 
+ .footer .credit {
+   margin-top: 2.5rem;
+   padding: 1rem;
+   padding-top: 2rem;
+   border-top: 0.1rem solid #cecece;
+   text-align: center;
+   color: var(--main-color);
+   font-size: 2rem;
+ }
+ 
+ .footer .credit span {
+   color: var(--primary-color);
+ }
+
+/* end */
+
+/* media query */
+
+@media (max-width:991px){
+
+   html{
+      font-size: 55%;
+   }
+ 
+   .header{
+     padding: 2rem 5rem;
+   }
+
+   section {
+      padding: 3rem;
+    }
+ 
+}
+
+@media (max-width: 768px) {
+
+   #menu {
+     display: inline-block;
+   }
+   .header .navbar {
+     position: absolute;
+     top: 99%;
+     left: 0;
+     right: 0;
+     background: var(--bg);
+     clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+   }
+   
+   .header .navbar.active {
+     clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+   }
+
+   .header .navbar a{
+      display: flex;
+        background:var(--white);
+        border-radius: .5rem;
+        padding:1.3rem;
+        margin:1.3rem;
+        font-size: 2rem;
+        justify-content: center;
+   }
+
+   .home .content h3{
+      font-size: 4rem;
+  }
+
+}
+
+@media (max-width:450px){
+
+   html{
+       font-size: 50%;
+   }
+}
+
+.ans {
+    display: none;
+    color: #8b8b8b;
+    max-width: 450px;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 1.4em;
+    margin-top: 30px;
+    
+}
+
+.quest {
+    font-size: 18px;
+    cursor: pointer;
+    height: fit-content;
+    background-color:white;
+    border: 1px solid #f4f4f4;
+    padding: 40px;
+    border-radius: 25px;
+    width:750px;
+    margin:20px auto;
+
+    
+    
+}
+
+@keyframes bottomToTop {
+  0% {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.block {
+  opacity: 0; /* Start invisible */
+  animation: bottomToTop 2s ease-out forwards; /* Duration and easing */
+ }
+
+
+
+
+
+
+
+
+    </style>
+
+</head>
+<body>
+     <!-- header section starts -->
+
+<header class="header">
+
+    <a data-aos="zoom-in-left" data-aos-delay="150" href="#" class="logo"> <i class="fas fa-user"></i> Startiqo </a>
+
+    <nav class="navbar">
+        <a data-aos="zoom-in-left" data-aos-delay="300" href="index.html#home">home</a>
+        <a data-aos="zoom-in-left" data-aos-delay="450" href="index.html">about</a>
+        <a data-aos="zoom-in-left" data-aos-delay="600" href="index.html#whyus">Why Us</a>
+        <a data-aos="zoom-in-left" data-aos-delay="750" href="resources.html">Resources</a>
+        <a data-aos="zoom-in-left" data-aos-delay="900" href="index.html#gallery">Clients</a>
+        <a data-aos="zoom-in-left" data-aos-delay="1050" href="index.html#steps">Steps</a>
+        <a data-aos="zoom-in-left" data-aos-delay="1200" href="index.html#contact">contact</a>
+     </nav>
+     
+    
+    <div class="icons">
+        <div data-aos="zoom-in-left" data-aos-delay="1350" class="fas fa-moon" id="theme-btn"></div>
+        <div data-aos="zoom-in-left" data-aos-delay="1500" class="fas fa-bars" id="menu"></div>
+    </div>
+
+</header>
+
+
+
+
+
+<ol>
+
+
+<div class="block">
+    <div class="services">
+        <p class="heading aos-init aos-animate" data-aos="fade-up">Resources</p>
+        <div class="faq aos-init aos-animate" data-aos="fade-up">
+            
+                <div class="quest"> 
+                    <b><li>Business Plan Templates:</li></b>
+                     <p>HubSpot: Free business plan template to help you outline your business strategy
+                    <a href="https://offers.hubspot.com/business-plan-template?hubs_post-cta=author&form=MG0AV3&hubs_signup-url=blog.hubspot.com/sales/entrepreneur-resources&hubs_signup-cta=-medium&hubs_post=blog.hubspot.com/sales/entrepreneur-resources&_ga=2.38328999.509899810.1729994793-65183881.1729994793">(link)</a></p><br>
+
+                </div>
+
+                <div class="quest"> 
+                    
+                    <b><li>Legal Essentials:</li></b>
+                    <p>Harvard Business School Online: Articles and guides on legal requirements for new businesses.
+                    <a href="https://online.hbs.edu/blog/post/startup-resources?form=MG0AV3">(link)</a></p> </div>
+
+                <div class="quest"> 
+                    
+                    <b><li>Funding Options:</li></b>
+
+                    <p>Crowdfunding Platforms: Platforms like Kickstarter and Indiegogo to raise capital.<br>
+                       - Kickstarter
+                    <a href="https://www.kickstarter.com/?form=MG0AV3">(link)</a><br>
+                    - Indiegogo
+                    <a href="https://www.indiegogo.com/?form=MG0AV3">(link)</a></p>
+                 </div>
+                <div class="quest"> 
+                    
+                    <b><li>Market Research Tools:</li></b>
+
+                    <p>Google Trends: To understand market demand and trends.<a href="https://trends.google.com/trends/?form=MG0AV3">(link)</a>
+                    
+                    
+                    </p>
+                    
+                </div>
+            
+                <div class="quest"> 
+                    <b><li>Mentorship Programs:</li></b>
+
+                        <p>YPO: A global network of chief executives and entrepreneurs for mentorship.
+                         <a href="https://www.ypo.org/?form=MG0AV3">(link)</a>
+                            </p>
+                </div>
+            
+                <div class="quest"> 
+                    
+                    <b><li>Educational Resources:</li></b>
+
+                    <p>Coursera: Online courses on entrepreneurship and business management.
+                        <a href="https://www.coursera.org/browse/business/entrepreneurship">(link)</a>
+                    </p>
+                </div>
+            
+                <div class="quest"> 
+                    
+                    <b><li>Networking Opportunities:</li></b>
+
+                    <p>LinkedIn: Connect with industry professionals and potential investors.
+                        <a href="https://www.linkedin.com/?form=MG0AV3">(link)</a>
+                    </p>
+                    
+                </div>
+                <div class="quest"> 
+                    
+                    <b><li>Productivity Tools:</li></b>
+
+                    <p>Trello: Project management tool to organize tasks and collaborate with your team.
+                        <a href="https://trello.com/?form=MG0AV3">(link)</a>
+                    </p>
+                </div>
+                <div class="quest"> 
+                    
+                    <b><li>Marketing Resources:</li></b>
+
+                    <p>HubSpot Marketing Hub: Tools for content creation, SEO, and social media marketing.
+                        <a href="https://www.hubspot.com/products/crm/enterprise?form=MG0AV3&hubs_content=blog.hubspot.com%2Fsales%2Fentrepreneur-resources&hubs_content-cta=HubSpot+Growth+Platform&hubs_post=blog.hubspot.com%2Fsales%2Fentrepreneur-resources&hubs_post-cta=HubSpot+Growth+Platform&_ga=2.34461477.509899810.1729994793-65183881.1729994793&_gl=1*1w6r1g0*_gcl_au*NTAxMDI4MjM1LjE3Mjk5OTQ3OTI._ga*NjUxODM4ODEuMTcyOTk5NDc5Mw.._ga_LXTM6CQ0XK*MTcyOTk5NjY5OC4xLjEuMTcyOTk5Njc4My41Mi4wLjA.">(link)</a>
+                    </p>
+                </div>
+                <div class="quest"> 
+                    
+                    <b><li>Financial Planning:</li></b>
+
+                    <p>Xero: Accounting software for managing finances and compliance.
+                        <a href="https://www.xero.com/us/?form=MG0AV3">(link)</a>
+                    </p>
+                    
+                </div>
+                <div class="quest"> 
+                    
+                    <b><li>Support Networks:</li></b>
+
+                    <p>Entrepreneur Forums: Communities like EO and Quora for advice and support.<br>
+                    
+                    - EO Forum<a href="https://hub.eonetwork.org/?form=MG0AV3">(link)</a><br>
+                    
+                    - Quora<a href="https://www.quora.com/topic/Entrepreneurship">(link)</a>
+                    </p>
+                </div>
+                <div class="quest"> 
+                    
+                    <b><li>Startup Accelerators:</li></b>
+
+                    <p>Y Combinator: Accelerator program for early-stage startups.
+                        <a href="https://www.ycombinator.com/?form=MG0AV3">(link)</a>
+                    </p>
+                                 </div>
+                <div class="quest"> 
+                    <b><li>Design Tools:</li></b>
+
+                    <p>Mockplus: Design prototyping tool for visualizing your product.
+                     <a href="https://www.mockplus.com/">(link)</a>
+                    </p>
+                </div>
+            
+                                 
+                <div class="quest"> 
+                    
+                    <b><li>Analytics Tools:</li></b>
+
+                    <p>Google Analytics: To track and analyze website traffic.
+                        <a href="https://accounts.google.com/v3/signin/confirmidentifier?authuser=0&continue=https%3A%2F%2Fanalytics.google.com%2Fanalytics%2Fweb%2Fprovision%2F%23%2Fprovision&followup=https%3A%2F%2Fanalytics.google.com%2Fanalytics%2Fweb%2Fprovision%2F&ifkv=AcMMx-f-Mbr3A0J1uIUNLAGQONbSYLo9-skqq3Xq35O9bg72gcbtoMhe5qxUXGdpscfLoSM8gvcLxg&passive=1209600&service=analytics&flowName=GlifWebSignIn&flowEntry=ServiceLogin&dsh=S-1323223843%3A1729998090684710&ddm=0">(link)</a>
+                    </p>
+                    
+                </div>
+            
+                
+            
+        </div>
+    </div>
+</div>
+
+</ol>
+
+
+</div>
+  
+<div class="block">
+    <div class="services">
+        <p class="heading aos-init aos-animate" data-aos="fade-up">FAQS</p>
+        <div class="faq aos-init aos-animate" data-aos="fade-up">
+            <div>
+                <div class="quest" onclick="faqFunc(this)">
+                    <div>
+                        <p>What is Startiqo, and how does it help startups?</p>
+                        <i class="bx bx-plus"></i>
+                    </div>
+                    <p class="ans" style="display: none;" style="text-align: center;">Startiqo is an online portal designed to simplify the process of legally registering your startup. We guide you through each step, provide essential resources, and help streamline the process so you can focus on growing your business. </p>
+                </div>
+                <script>
+                    function faqFunc(element) {
+                        var ans = element.querySelector('.ans');
+                        var icon = element.querySelector('i');
+                        if (ans.style.display === 'none' || ans.style.display === '') {
+                            ans.style.display = 'block';
+                            icon.classList.replace('bx-plus', 'bx-minus');
+                        } else {
+                            ans.style.display = 'none';
+                            icon.classList.replace('bx-minus', 'bx-plus');
+                        }
+                    }
+                    </script>
+
+                <div class="quest" onclick="faqFunc(this)">
+                    <div>
+                        <p>Who is eligible to register a startup through Startiqo?</p>
+                        <i class="bx bx-plus"></i>
+                    </div>
+                    <p class="ans" style="display: none;">Any individual or team with a business idea or startup concept that meets local government requirements for a business entity can register through Startiqo.</p>
+                </div>
+                <script>
+                    function faqFunc(element) {
+                        var ans = element.querySelector('.ans');
+                        var icon = element.querySelector('i');
+                        if (ans.style.display === 'none' || ans.style.display === '') {
+                            ans.style.display = 'block';
+                            icon.classList.replace('bx-plus', 'bx-minus');
+                        } else {
+                            ans.style.display = 'none';
+                            icon.classList.replace('bx-minus', 'bx-plus');
+                        }
+                    }
+                    </script>
+
+                <div class="quest" onclick="faqFunc(this)">
+                    <div>
+                        <p>What documents are required for registration?</p>
+                        <i class="bx bx-plus"></i>
+                    </div>
+                    <p class="ans" style="display: none;">Required documents typically include identification, proof of address, a business plan, and any relevant legal documentation. We'll provide a complete checklist during the registration process.</p>
+                </div>
+            </div>
+            <script>
+                function faqFunc(element) {
+                    var ans = element.querySelector('.ans');
+                    var icon = element.querySelector('i');
+                    if (ans.style.display === 'none' || ans.style.display === '') {
+                        ans.style.display = 'block';
+                        icon.classList.replace('bx-plus', 'bx-minus');
+                    } else {
+                        ans.style.display = 'none';
+                        icon.classList.replace('bx-minus', 'bx-plus');
+                    }
+                }
+                </script>
+
+
+            <div class="quest" onclick="faqFunc(this)"> 
+                    <div> 
+                        <p>How long does the registration process take?</p> 
+                        <i class="bx bx-plus"></i> 
+                    </div> 
+                    <p class="ans" style="display: none;">The time can vary depending on the type of registration and document verification, but Startiqo keeps you updated at every step so you always know where you are in the process.</p> 
+                </div>
+                
+                <script>
+                function faqFunc(element) {
+                    var ans = element.querySelector('.ans');
+                    var icon = element.querySelector('i');
+                    if (ans.style.display === 'none' || ans.style.display === '') {
+                        ans.style.display = 'block';
+                        icon.classList.replace('bx-plus', 'bx-minus');
+                    } else {
+                        ans.style.display = 'none';
+                        icon.classList.replace('bx-minus', 'bx-plus');
+                    }
+                }
+                </script>
+                
+
+
+                <div class="quest" onclick="faqFunc(this)"> 
+    <div> 
+        <p>Is there a fee for using Startiqo?</p> 
+        <i class="bx bx-plus"></i> 
+    </div> 
+    <p class="ans" style="display: none;">Yes, we offer a range of packages based on your registration needs. You can check our Pricing page for details on service fees and packages.</p> 
+  </div>
+
+<script>
+function faqFunc(element) {
+    var ans = element.querySelector('.ans');
+    var icon = element.querySelector('i');
+    if (ans.style.display === 'none' || ans.style.display === '') {
+        ans.style.display = 'block';
+        icon.classList.replace('bx-plus', 'bx-minus');
+    } else {
+        ans.style.display = 'none';
+        icon.classList.replace('bx-minus', 'bx-plus');
+    }
+}
+</script>
+
+
+
+                <div class="quest" onclick="faqFunc(this)"> 
+    <div> 
+        <p>Can Startiqo help me with legal and compliance requirements?</p> 
+        <i class="bx bx-plus"></i> 
+    </div> 
+    <p class="ans" style="display: none;">Startiqo provides resources and guidance on basic legal and compliance matters. However, for in-depth legal consultation, we recommend consulting a legal professional.</p> 
+</div>
+
+<script>
+function faqFunc(element) {
+    var ans = element.querySelector('.ans');
+    var icon = element.querySelector('i');
+    if (ans.style.display === 'none' || ans.style.display === '') {
+        ans.style.display = 'block';
+        icon.classList.replace('bx-plus', 'bx-minus');
+    } else {
+        ans.style.display = 'none';
+        icon.classList.replace('bx-minus', 'bx-plus');
+    }
+}
+</script>
+
+
+
+                <div class="quest" onclick="faqFunc(this)"> 
+    <div> 
+        <p>How secure is my information on Startiqo?</p> 
+        <i class="bx bx-plus"></i> 
+    </div> 
+    <p class="ans" style="display: none;">We prioritize the security of your data with encrypted servers and strict data protection protocols, ensuring your personal and business information stays safe.</p> 
+</div>
+
+<script>
+function faqFunc(element) {
+    var ans = element.querySelector('.ans');
+    var icon = element.querySelector('i');
+    if (ans.style.display === 'none' || ans.style.display === '') {
+        ans.style.display = 'block';
+        icon.classList.replace('bx-plus', 'bx-minus');
+    } else {
+        ans.style.display = 'none';
+        icon.classList.replace('bx-minus', 'bx-plus');
+    }
+}
+</script>
+
+                
+                <div class="quest" onclick="faqFunc(this)"> 
+                    <div> 
+                        <p>Can I track the status of my registration?</p> 
+                        <i class="bx bx-plus"></i> 
+                    </div> 
+                    <p class="ans" style="display: none;">Yes, Startiqo offers real-time status tracking, so you can view updates and see where you are in the registration process directly from your dashboard.</p> 
+                </div>
+                
+                <script>
+                function faqFunc(element) {
+                    var ans = element.querySelector('.ans');
+                    var icon = element.querySelector('i');
+                    if (ans.style.display === 'none' || ans.style.display === '') {
+                        ans.style.display = 'block';
+                        icon.classList.replace('bx-plus', 'bx-minus');
+                    } else {
+                        ans.style.display = 'none';
+                        icon.classList.replace('bx-minus', 'bx-plus');
+                    }
+                }
+                </script>
+                
+
+                <div class="quest" onclick="faqFunc(this)"> 
+                    <div> 
+                        <p>What if I make a mistake in my registration form?</p> 
+                        <i class="bx bx-plus"></i> 
+                    </div> 
+                    <p class="ans" style="display: none;">Don't worry—if you catch an error, you can edit your form before submission. If it’s already submitted, reach out to our support team for assistance.</p> 
+                </div>
+                
+                <script>
+                function faqFunc(element) {
+                    var ans = element.querySelector('.ans');
+                    var icon = element.querySelector('i');
+                    if (ans.style.display === 'none' || ans.style.display === '') {
+                        ans.style.display = 'block';
+                        icon.classList.replace('bx-plus', 'bx-minus');
+                    } else {
+                        ans.style.display = 'none';
+                        icon.classList.replace('bx-minus', 'bx-plus');
+                    }
+                }
+                </script>
+                
+                
+                <div class="quest" onclick="faqFunc(this)"> 
+                    <div> 
+                        <p>How do I contact Startiqo support?</p> 
+                        <i class="bx bx-plus"></i> 
+                    </div> 
+                    <p class="ans" style="display: none;">You can reach our support team via the Contact page, which includes our email, phone number, and a form to submit any questions or concerns.</p> 
+                </div>
+                
+                <script>
+                function faqFunc(element) {
+                    var ans = element.querySelector('.ans');
+                    var icon = element.querySelector('i');
+                    if (ans.style.display === 'none' || ans.style.display === '') {
+                        ans.style.display = 'block';
+                        icon.classList.replace('bx-plus', 'bx-minus');
+                    } else {
+                        ans.style.display = 'none';
+                        icon.classList.replace('bx-minus', 'bx-plus');
+                    }
+                }
+                </script>
+                
+                
+
+                
+                
+                
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+<!-- footer -->
+
+<section class="footer">
+
+    <div class="box-container">
+
+      <div class="box" data-aos="fade-up">
+        <h3> <i class="fas fa-user"></i> Our Team </h3>
+        <p>Behind Startiqo is a dedicated team of industry veterans, tech enthusiasts, and startup aficionados, all united by a common goal: to simplify the path to entrepreneurship.</p><br><p>Join us on this journey and let Startiqo be your trusted partner in turning your startup dreams into reality.</p>
+      </div>
+
+      <div class="box" data-aos="fade-up">
+        <h3>Quick Links</h3>
+          <a href="#"><i class="fas fa-chevron-right"></i> --- </a>
+          <a href="#"><i class="fas fa-chevron-right"></i> --- </a>
+          <a href="#"><i class="fas fa-chevron-right"></i> --- </a>
+          <a href="#"><i class="fas fa-chevron-right"></i> --- </a>
+      </div>
+
+      <div class="box" data-aos="fade-up">
+        <h3>Contact Us</h3>
+        <a href="#"><i class="fas fa-phone"></i> XXX-XXX-X555</a>
+        <a href="#"><i class="fas fa-phone"></i> XXX-XXX-X565</a>
+        <a href="#"><i class="fas fa-envelope"></i> work@bugriders.com</a>
+        <a href="#"><i class="fas fa-map"></i> Lovely Professional University, Punjab</a>
+      </div>
+
+      <div class="box" data-aos="fade-up">
+        <h3>Follow Us</h3>
+        <a href="#"> <i class="fab fa-facebook-f"></i> facebook </a>
+        <a href="#"> <i class="fab fa-twitter"></i> twitter </a>
+        <a href="#"> <i class="fab fa-instagram"></i> instagram </a>
+        <a href="#"> <i class="fab fa-pinterest"></i> pinterest </a>
+      </div>
+    </div>
+
+    <div class="credit"> &copy; copyright @ 2024 by <span>Bug Riders</span> </div>
+
+  </footer>
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  <script src="script.js"></script>
+  <script>
+      function clicked() {
+        if (document.getElementById("Name").value !== "" && document.getElementById("Email").value !== "" && document.getElementById("Number").value !== "" && document.getElementById("Address").value !== "" && document.getElementById("Mess").value !== "") {
+          alert("Message Has been sended Succesfully");
+        }
+      }
+    </script>
+
+</body>
+</html>
